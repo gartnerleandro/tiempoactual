@@ -6,7 +6,8 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
-    'standard'
+    'standard',
+    'prettier'
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -19,7 +20,6 @@ module.exports = {
     'react'
   ],
   rules: {
-    semi: ['error', 'always'],
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off'
   }
