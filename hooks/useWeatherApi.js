@@ -6,10 +6,10 @@ export default () => {
 
   function getSelectedCityInfo(lat, lon) {
     setLoading(true);
-    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.NEXT_PUBLIC_OPENWEATHERMAP_API_KEY}&lang=es&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&appid=${process.env.NEXT_PUBLIC_OPENWEATHERMAP_API_KEY}&lang=es&units=metric`)
     .then((response) => response.json())
     .then((data) => {
-      console.warn(weatherResults);
+      console.warn(data);
       setWeatherResults(data);
       setLoading(false);
     })

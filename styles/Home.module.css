@@ -1,29 +1,140 @@
-.container {
-  min-height: 100vh;
-  padding: 0 58px;
+.main {
+  flex: 1;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
-  background-color: #1e213a;
 }
 
-.main {
-  padding: 5rem 0;
+@media screen and (max-width: 900px) {
+  .main {
+    flex-direction: column;
+  }
+}
+
+.currentWeather {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 810px;
+  background-image: url(/images/Cloud-background.png);
+  background-repeat: no-repeat;
+  -webkit-animation: slide 15s ease-in-out infinite;
+  animation: slide 15s ease-in-out infinite;
+  background-color: #1e213a;
+  background-blend-mode: soft-light;
+}
+
+@-webkit-keyframes slide {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 50% 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+@keyframes slide {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 50% 0;
+  }
+  to {
+    background-position: 0 0;
+  }
 }
 
 .title {
   font-size: 144px;
-  text-align: center;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 169px;
   color: #e7e7eb;
+  margin: 40px 0 0 0;
 }
 
 .degrees {
-  font: 48px sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 56.35px;
   color: #a09fb1;
+}
+
+.weather {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  color: #A09FB1;
+  margin: 23px 0 0 0;
+  text-transform: capitalize;
+}
+
+.dateWrapper {
+  display: flex;
+  align-items: center;
+  margin: 48px 0 0 0;
+}
+
+.today {
+  color:#88869D;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.dateSeparator {
+  margin: 0 16px;
+  color:#88869D;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.dateSeparator:before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  background-color: #88869D;
+  border-radius: 50%;
+  display: block;
+}
+
+.dateFormat {
+  color:#88869D;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.locationWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 34px 0 0 0;
+}
+
+.location {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #88869D;
+  margin: 0 0 0 9px
+}
+
+.forecast {
+  background: #100E1D;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
