@@ -71,7 +71,7 @@
   font-size: 36px;
   line-height: 42px;
   text-align: center;
-  color: #A09FB1;
+  color: #a09fb1;
   margin: 23px 0 0 0;
   text-transform: capitalize;
 }
@@ -83,7 +83,7 @@
 }
 
 .today {
-  color:#88869D;
+  color: #88869d;
   font-style: normal;
   font-weight: 300;
   font-size: 18px;
@@ -92,7 +92,7 @@
 
 .dateSeparator {
   margin: 0 16px;
-  color:#88869D;
+  color: #88869d;
   font-style: normal;
   font-weight: 300;
   font-size: 18px;
@@ -103,13 +103,13 @@
   content: "";
   width: 4px;
   height: 4px;
-  background-color: #88869D;
+  background-color: #88869d;
   border-radius: 50%;
   display: block;
 }
 
 .dateFormat {
-  color:#88869D;
+  color: #88869d;
   font-style: normal;
   font-weight: 300;
   font-size: 18px;
@@ -128,12 +128,12 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
-  color: #88869D;
-  margin: 0 0 0 9px
+  color: #88869d;
+  margin: 0 0 0 9px;
 }
 
 .forecast {
-  background: #100E1D;
+  background: #100e1d;
   display: flex;
   flex-direction: column;
   align-items: center;

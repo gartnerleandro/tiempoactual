@@ -1,16 +1,22 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 export default () => {
   const [weatherResults, setWeatherResults] = useState({});
   const [loadingWeather, setLoading] = useState(false);
 
-  function getSelectedCityInfo (lat, lon) {
+  function getSelectedCityInfo(lat, lon) {
     setLoading(true);
-    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&appid=${process.env.NEXT_PUBLIC_OPENWEATHERMAP_API_KEY}&lang=es&units=metric`)
+    fetch(
+      `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&appid=${process.env.NEXT_PUBLIC_OPENWEATHERMAP_API_KEY}&lang=es&units=metric`
+    )
       .then((response) => response.json())
       .then((data) => {
         console.warn(data);
-        setWeatherResults({ ...data, windSpeed: data.wind_speed, windDeg: data.wind_deg });
+        setWeatherResults({
+          ...data,
+          windSpeed: data.wind_speed,
+          windDeg: data.wind_deg,
+        });
         setLoading(false);
       })
       .catch((err) => {

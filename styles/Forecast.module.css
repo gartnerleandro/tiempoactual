@@ -13,7 +13,7 @@
   margin: 13px;
   flex-direction: column;
   padding: 18px 22px;
-  background: #1E213A;
+  background: #1e213a;
   max-height: 177px;
 }
 
@@ -23,7 +23,7 @@
   font-size: 16px;
   line-height: 19px;
   text-align: center;
-  color: #E7E7EB;
+  color: #e7e7eb;
   margin: 0 0 10px 0;
 }
 
@@ -40,7 +40,7 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
-  color: #A09FB1;
+  color: #a09fb1;
 }
 
 .maxTemp {
@@ -48,5 +48,5 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
-  color: #E7E7EB;
+  color: #e7e7eb;
 }

@@ -8,7 +8,7 @@
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
-  color: #E7E7EB;
+  color: #e7e7eb;
   margin: 0 21px 16px 21px;
 }
 
@@ -19,8 +19,8 @@
   flex-direction: column;
   align-items: center;
   padding: 22px 22px 38px 22px;
-  background: #1E213A;
-  color: #E7E7EB;
+  background: #1e213a;
+  color: #e7e7eb;
 }
 
 .cardTitle {
@@ -29,7 +29,7 @@
   font-size: 16px;
   line-height: 19px;
   text-align: center;
-  color: #E7E7EB;
+  color: #e7e7eb;
   margin: 0 0 6px 0;
 }
 
@@ -38,7 +38,7 @@
   font-weight: 700;
   font-size: 64px;
   line-height: 75px;
-  color: #E7E7EB;
+  color: #e7e7eb;
   margin: 0 0 24px 0;
 }
 
@@ -47,7 +47,7 @@
   font-weight: 300;
   font-size: 36px;
   line-height: 42.26px;
-  color: #E7E7EB;
+  color: #e7e7eb;
 }
 
 .windDirection {
@@ -71,7 +71,7 @@
   width: 100%;
   height: 8px;
   border-radius: 5px;
-  background-color: #E7E7EB;;
+  background-color: #e7e7eb;
   margin: 2px 0 0 0;
 }
 
@@ -82,7 +82,7 @@
   right: 0;
   height: 8px;
   border-radius: 5px;
-  background-color: #FFEC65;
+  background-color: #ffec65;
 }
 
 .sliderLabels {
