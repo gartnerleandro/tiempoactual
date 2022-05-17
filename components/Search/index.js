@@ -8,11 +8,11 @@ const FoundElement = ({ name, state, country, onSelectCity }) => (
   </button>
 );
 
-export default ({ onSelectCity }) => {
-  const [city, setCity] = useState("");
+export default function Search ({ onSelectCity }) {
+  const [city, setCity] = useState('');
   const [loading, setLoading] = useState(false);
   const [showResults, setShowResults] = useState(true);
-  const {getSearchResults, searchResults, loadingSearch} = useSearchApi();
+  const { getSearchResults, searchResults, loadingSearch } = useSearchApi();
 
   useEffect(() => {
     let searchTimeout;
@@ -25,20 +25,20 @@ export default ({ onSelectCity }) => {
         setLoading(false);
       }, 3000);
     }
-    return () => clearTimeout(searchTimeout)
+    return () => clearTimeout(searchTimeout);
   }, [city]);
 
-  function onCityChange(e) {
+  function onCityChange (e) {
     setCity(e.target.value);
   }
 
-  function handleFocus() {
+  function handleFocus () {
     if (searchResults.length > 0) {
       setShowResults(true);
     }
   }
 
-  function handleResultClick({lat, lon}) {
+  function handleResultClick ({ lat, lon }) {
     onSelectCity(lat, lon);
     setShowResults(false);
   }
@@ -47,7 +47,7 @@ export default ({ onSelectCity }) => {
     <div>
       <input type="text" placeholder="Busca tu ciudad" onChange={onCityChange} onFocus={handleFocus}></input>
       {(loading || loadingSearch) && <div>Cargando datos...</div>}
-      {!loading && !loadingSearch && searchResults.length > 0 && showResults && searchResults.map((elem) => <FoundElement {...elem} onSelectCity={() => handleResultClick(elem)} />)}
+      {!loading && !loadingSearch && searchResults.length > 0 && showResults && searchResults.map((elem) => <FoundElement key={elem.name} {...elem} onSelectCity={() => handleResultClick(elem)} />)}
     </div>
   );
 };

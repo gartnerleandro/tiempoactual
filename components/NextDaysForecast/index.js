@@ -16,11 +16,10 @@ const CardElement = ({ dt, index, weather, temp }) => (
   </div>
 );
 
-export default ({data}) => {
-
+export default function NextDayForecast ({ data }) {
   return (
     <div className={styles.container}>
       {data.map((item, index) => <CardElement key={item.dt} {...item} index={index} />)}
     </div>
-  )
-}
+  );
+};

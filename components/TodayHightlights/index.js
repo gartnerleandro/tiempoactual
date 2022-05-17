@@ -4,21 +4,21 @@ import Direction from '../icons/Direction';
 
 import styles from '../../styles/Hightlights.module.css';
 
-export default ({wind_speed, wind_deg, humidity, visibility, pressure}) => {
+export default function TodayHightlights ({ windSpeed, windDeg, humidity, visibility, pressure }) {
   return (
     <div className={styles.container}>
       <h4 className={styles.title}>Destacados de hoy</h4>
       <div className={styles.card}>
         <p className={styles.cardTitle}>Estado del viento</p>
         <p className={styles.cardData}>
-          {getKmPerHours(wind_speed)}
+          {getKmPerHours(windSpeed)}
           <span className={styles.symbol}>km/h</span>
         </p>
         <p className={styles.windDirection}>
-          <i style={{ transform: `rotate(${wind_deg}deg)`}}>
+          <i style={{ transform: `rotate(${windDeg}deg)` }}>
             <Direction />
           </i>
-          {getWindDirection(wind_deg)}
+          {getWindDirection(windDeg)}
         </p>
       </div>
       <div className={styles.card}>
@@ -56,5 +56,5 @@ export default ({wind_speed, wind_deg, humidity, visibility, pressure}) => {
         </p>
       </div>
     </div>
-  )
+  );
 };

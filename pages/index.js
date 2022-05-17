@@ -15,9 +15,9 @@ import useWeatherApi from '../hooks/useWeatherApi';
 
 import styles from '../styles/Home.module.css';
 
-export default function Home() {
-  const {getSelectedCityInfo, weatherResults, loadingWeather} = useWeatherApi();
-  const {geolocation, currentPosition, locationName} = useGeolocation();
+export default function Home () {
+  const { getSelectedCityInfo, weatherResults, loadingWeather } = useWeatherApi();
+  const { geolocation, currentPosition, locationName } = useGeolocation();
 
   useEffect(() => {
     if (geolocation && currentPosition) {
@@ -59,16 +59,16 @@ export default function Home() {
           }
         </div>
         <div className={styles.forecast}>
-          { 
+          {
             !loadingWeather &&
             weatherResults?.daily && <NextDaysForecast data={weatherResults.daily.slice(1, 6)} />
           }
-          { 
+          {
             !loadingWeather &&
             weatherResults?.current && <TodayHightlights {...weatherResults.current} />
           }
         </div>
       </main>
     </>
-  )
+  );
 }
