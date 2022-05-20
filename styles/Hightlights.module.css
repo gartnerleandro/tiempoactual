@@ -23,6 +23,10 @@
   color: #e7e7eb;
 }
 
+.card:last-child {
+  margin-bottom: 0;
+}
+
 .cardTitle {
   font-style: normal;
   font-weight: 500;
