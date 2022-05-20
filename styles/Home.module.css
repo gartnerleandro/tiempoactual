@@ -1,14 +1,8 @@
 .main {
   flex: 1;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-}
-
-@media screen and (max-width: 900px) {
-  .main {
-    flex-direction: column;
-  }
 }
 
 .currentWeather {
@@ -17,7 +11,6 @@
   justify-content: center;
   align-items: center;
   min-height: 810px;
-  max-width: 459px;
   width: 100%;
   background-image: url(/images/Cloud-background.png);
   background-repeat: no-repeat;
@@ -25,29 +18,6 @@
   animation: slide 15s ease-in-out infinite;
   background-color: #1e213a;
   background-blend-mode: soft-light;
-}
-
-@-webkit-keyframes slide {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 50% 0;
-  }
-  to {
-    background-position: 0 0;
-  }
-}
-@keyframes slide {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 50% 0;
-  }
-  to {
-    background-position: 0 0;
-  }
 }
 
 .title {
@@ -138,4 +108,43 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+  .main {
+    flex-direction: row;
+    min-height: 100vh;
+  }
+
+  .currentWeather {
+    max-width: 459px;
+  }
+
+  .forecast {
+    justify-content: center;
+  }
+}
+
+@-webkit-keyframes slide {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 50% 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+@keyframes slide {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 50% 0;
+  }
+  to {
+    background-position: 0 0;
+  }
 }

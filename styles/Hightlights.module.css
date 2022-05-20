@@ -1,6 +1,8 @@
 .container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 0 55px;
+  width: 100%;
 }
 
 .title {
@@ -10,6 +12,11 @@
   line-height: 28px;
   color: #e7e7eb;
   margin: 0 21px 16px 21px;
+}
+
+.cardsWrapper {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .card {
@@ -100,4 +107,27 @@
   justify-content: space-between;
   position: relative;
   padding: 0 5px;
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: 790px;
+  }
+
+  .title {
+    margin: 0 21px 16px 0;
+  }
+
+  .cardsWrapper {
+    justify-content: space-between;
+  }
+
+  .card {
+    flex: 0 1 calc(50% - 16px);
+    margin: 0 0 32px 0;
+  }
+
+  .card:last-child {
+    margin-bottom: 32px;
+  }
 }

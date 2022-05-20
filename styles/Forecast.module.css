@@ -50,3 +50,30 @@
   line-height: 19px;
   color: #e7e7eb;
 }
+
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: unset;
+    flex-wrap: nowrap;
+    width: 100%;
+    max-width: 790px;
+  }
+
+  .card {
+    flex: unset;
+    max-width: 120px;
+    width: 100%;
+    margin: 0 13px 0 0;
+  }
+
+  .card:last-child {
+    margin: 0;
+  }
+
+  .title {
+    font-family: "Montserrat", sans-serif;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
