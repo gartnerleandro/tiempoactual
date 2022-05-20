@@ -35,7 +35,7 @@
 
 ## Overview
 
-![screenshot](https://github.com/gartnerleandro/tiempoactual/tree/main/screenshots/desktop_screenshot.png)
+![screenshot](https://github.com/gartnerleandro/tiempoactual/blob/main/screenshots/desktop_screenshot.png?raw=true)
 
 ### Built With
 
