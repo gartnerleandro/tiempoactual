@@ -78,9 +78,9 @@ export default function Home() {
           {!loadingWeather && weatherResults?.current && (
             <TodayHightlights {...weatherResults.current} />
           )}
+          <Footer />
         </div>
       </main>
-      <Footer />
     </>
   );
 }
