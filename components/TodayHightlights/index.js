@@ -9,8 +9,8 @@ import Direction from "../icons/Direction";
 import styles from "../../styles/Hightlights.module.css";
 
 export default function TodayHightlights({
-  windSpeed,
-  windDeg,
+  wind_speed: windSpeed,
+  wind_deg: windDeg,
   humidity,
   visibility,
   pressure,
@@ -38,7 +38,6 @@ export default function TodayHightlights({
           <span className={styles.symbol}>%</span>
         </p>
         {
-          // TODO slider
           <div className={styles.sliderWrapper}>
             <div className={styles.sliderLabels}>
               <span>0</span>

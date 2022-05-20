@@ -7,6 +7,7 @@ import { es } from "date-fns/locale";
 import LocationIcon from "../components/icons/Location";
 import NextDaysForecast from "../components/NextDaysForecast";
 import TodayHightlights from "../components/TodayHightlights";
+import Footer from "../components/Footer";
 
 import { iconImages } from "../utils/constants";
 
@@ -79,6 +80,7 @@ export default function Home() {
           )}
         </div>
       </main>
+      <Footer />
     </>
   );
 }

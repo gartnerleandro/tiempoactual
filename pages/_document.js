@@ -8,7 +8,7 @@ class CustomDocument extends Document {
       <Html lang="es">
         <Head>
           <link
-            href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Raleway:wght@100;300;400&display=swap"
             rel="stylesheet"
           ></link>
           {this.props.emotionStyleTags}

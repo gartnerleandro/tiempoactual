@@ -12,11 +12,7 @@ export default () => {
       .then((response) => response.json())
       .then((data) => {
         console.warn(data);
-        setWeatherResults({
-          ...data,
-          windSpeed: data.wind_speed,
-          windDeg: data.wind_deg,
-        });
+        setWeatherResults(data);
         setLoading(false);
       })
       .catch((err) => {

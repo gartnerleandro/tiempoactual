@@ -8,6 +8,6 @@ export function getKmFromMts(mts) {
   return `${(mts / 1000).toFixed()}`;
 }
 
-export function getKmPerHours(mts) {
+export function getKmPerHours(mts = 0) {
   return `${(mts * 3.6).toFixed()}`;
 }

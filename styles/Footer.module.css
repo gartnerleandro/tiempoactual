@@ -1,0 +1,22 @@
+.footer {
+  background: #100e1d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 98px 0 0 0;
+}
+
+.createdby {
+  color: #a09fb1;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+}
+
+.createdby > a {
+  text-decoration: underline;
+  font-weight: bold;
+}
