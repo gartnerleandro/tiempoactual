@@ -14,16 +14,6 @@ export default () => {
     }
   }, []);
 
-  useEffect(() => {
-    if (geolocation) {
-      geolocation.getCurrentPosition((position) => {
-        const { latitude, longitude } = position.coords;
-        getLocationName(latitude, longitude);
-        setCurrentPosition({ latitude, longitude });
-      });
-    }
-  }, [geolocation]);
-
   function getLocationName(latitude, longitude) {
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.NEXT_PUBLIC_OPENWEATHERMAP_API_KEY}`
@@ -34,5 +24,19 @@ export default () => {
       });
   }
 
-  return { geolocation, currentPosition, locationName, getLocationName };
+  function getCurrentLocation() {
+    geolocation.getCurrentPosition((position) => {
+      const { latitude, longitude } = position.coords;
+      getLocationName(latitude, longitude);
+      setCurrentPosition({ latitude, longitude });
+    });
+  }
+
+  return {
+    geolocation,
+    currentPosition,
+    locationName,
+    getLocationName,
+    getCurrentLocation,
+  };
 };

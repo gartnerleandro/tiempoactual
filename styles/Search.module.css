@@ -1,0 +1,28 @@
+.container {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  bottom: 0;
+  background: #1e213a;
+  z-index: 1;
+  transition: all linear 0.3s;
+  width: 100%;
+  padding: 82px 47px 0 47px;
+}
+
+.container.open {
+  left: 0;
+}
+
+.close {
+  background: transparent;
+  outline: none;
+  border: none;
+  position: absolute;
+  top: 20px;
+  right: 53px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,68 +1,15 @@
-import { useEffect, useState } from "react";
+import InputSearch from "./Input";
+import Close from "../icons/Close";
 
-import useSearchApi from "../../hooks/useSearchApi";
+import styles from "../../styles/Search.module.css";
 
-const FoundElement = ({ name, state, country, onSelectCity }) => (
-  <button onClick={onSelectCity}>
-    <h5>{`${name}, ${state}, ${country}`}</h5>
-  </button>
-);
-
-export default function Search({ onSelectCity }) {
-  const [city, setCity] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [showResults, setShowResults] = useState(true);
-  const { getSearchResults, searchResults, loadingSearch } = useSearchApi();
-
-  useEffect(() => {
-    let searchTimeout;
-
-    if (city.length > 3) {
-      setLoading(true);
-
-      searchTimeout = setTimeout(() => {
-        getSearchResults(city);
-        setLoading(false);
-      }, 3000);
-    }
-    return () => clearTimeout(searchTimeout);
-  }, [city]);
-
-  function onCityChange(e) {
-    setCity(e.target.value);
-  }
-
-  function handleFocus() {
-    if (searchResults.length > 0) {
-      setShowResults(true);
-    }
-  }
-
-  function handleResultClick({ lat, lon }) {
-    onSelectCity(lat, lon);
-    setShowResults(false);
-  }
-
+export default function Search({ isOpen, onClose, onSelect }) {
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="Busca tu ciudad"
-        onChange={onCityChange}
-        onFocus={handleFocus}
-      ></input>
-      {(loading || loadingSearch) && <div>Cargando datos...</div>}
-      {!loading &&
-        !loadingSearch &&
-        searchResults.length > 0 &&
-        showResults &&
-        searchResults.map((elem) => (
-          <FoundElement
-            key={elem.name}
-            {...elem}
-            onSelectCity={() => handleResultClick(elem)}
-          />
-        ))}
+    <div className={`${styles.container} ${isOpen && styles.open}`}>
+      <button className={styles.close} onClick={onClose}>
+        <Close />
+      </button>
+      <InputSearch onSelectCity={onSelect} />
     </div>
   );
 }

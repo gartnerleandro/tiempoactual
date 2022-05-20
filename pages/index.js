@@ -1,13 +1,15 @@
 import Head from "next/head";
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { format, fromUnixTime } from "date-fns";
 import { es } from "date-fns/locale";
 
 import LocationIcon from "../components/icons/Location";
+import CurrentLocation from "../components/icons/CurrentLocation";
 import NextDaysForecast from "../components/NextDaysForecast";
 import TodayHightlights from "../components/TodayHightlights";
 import Footer from "../components/Footer";
+import Search from "../components/Search";
 
 import { iconImages } from "../utils/constants";
 
@@ -19,13 +21,30 @@ import styles from "../styles/Home.module.css";
 export default function Home() {
   const { getSelectedCityInfo, weatherResults, loadingWeather } =
     useWeatherApi();
-  const { geolocation, currentPosition, locationName } = useGeolocation();
+  const { geolocation, currentPosition, locationName, getCurrentLocation } =
+    useGeolocation();
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [city, setCity] = useState("");
 
   useEffect(() => {
     if (geolocation && currentPosition) {
       getSelectedCityInfo(currentPosition.latitude, currentPosition.longitude);
     }
   }, [geolocation]);
+
+  function handleOpenSearch() {
+    setSearchOpen(true);
+  }
+
+  function handleCloseSearch() {
+    setSearchOpen(false);
+  }
+
+  function handleSelectCity(latitude, longitude, cityName) {
+    setSearchOpen(false);
+    getSelectedCityInfo(latitude, longitude);
+    setCity(cityName);
+  }
 
   return (
     <>
@@ -35,11 +54,32 @@ export default function Home() {
           name="description"
           content="Consulta el tiempo actual en tu ubicación en tiempo real"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="shortcut icon"
+          href="/favicon.ico"
+          type="image/x-icon"
+        ></link>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon"></link>
       </Head>
 
-      <main className={styles.main}>
+      <main className={`${styles.main} ${searchOpen && styles.searchOpen}`}>
         <div className={styles.currentWeather}>
+          <div className={styles.searchButtonWrapper}>
+            <button className={styles.searchButton} onClick={handleOpenSearch}>
+              Buscar localizaciones
+            </button>
+            <button
+              className={styles.currentLocation}
+              onClick={getCurrentLocation}
+            >
+              <CurrentLocation />
+            </button>
+          </div>
+          <Search
+            isOpen={searchOpen}
+            onClose={handleCloseSearch}
+            onSelect={handleSelectCity}
+          />
           {!loadingWeather && weatherResults?.current?.weather && (
             <>
               <Image
@@ -66,7 +106,7 @@ export default function Home() {
               </div>
               <div className={styles.locationWrapper}>
                 <LocationIcon />
-                <h3 className={styles.location}>{locationName}</h3>
+                <h3 className={styles.location}>{city || locationName}</h3>
               </div>
             </>
           )}
