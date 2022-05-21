@@ -170,6 +170,10 @@
     min-height: 100vh;
   }
 
+  .main.searchOpen {
+    position: relative;
+  }
+
   .currentWeather {
     max-width: 459px;
   }
