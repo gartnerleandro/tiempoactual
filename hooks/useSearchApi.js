@@ -7,7 +7,7 @@ export default () => {
   function getSearchResults(city) {
     setLoading(true);
     fetch(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${process.env.NEXT_PUBLIC_OPENWEATHERMAP_API_KEY}&lang=es`
+      `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${process.env.NEXT_PUBLIC_OPENWEATHERMAP_API_KEY}&lang=es`
     )
       .then((response) => response.json())
       .then((data) => {
